@@ -54,14 +54,15 @@ Installation Instructions:
   ```bash
    git clone https://github.com/ASafra0099/Employee-Management-System-WD-Calculator.git
 - Navigate to the Project Directory
+    ```bash
+    cd Employee-Management-System-WD-Calculator
 - Restore the required NuGet packages:
     ```bash
     dotnet restore
 - Set Up the Database:
     ```bash
     "ConnectionStrings": {
-  "DefaultConnection": "Server=yourserver;Database=EmployeeDB;Trusted_Connection=True;MultipleActiveResultSets=true"
-}
+  "DefaultConnection": "Server=yourserver;Database=EmployeeDB;Trusted_Connection=True;MultipleActiveResultSets=true"}
 - Apply Migrations:
     ```bash
     dotnet ef database update
