@@ -1,0 +1,51 @@
+﻿@model EmployeeViewModel
+@{
+    ViewData["Title"] = "Update employee details";  // Title of the page
+}
+
+<!-- Main container for the form -->
+<div class="p-4 container">
+    <!-- Header Section -->
+    <div class="row p-4">
+        <div class="col-md-12">
+            <h3>Update Employee Details</h3>  <!-- Title to indicate updating employee details -->
+        </div>
+    </div>
+
+    <!-- Form Section for updating employee details -->
+    <div class="row p-4">
+        <div class="col-md-6">
+            <!-- Form for submitting updated employee details -->
+            <form asp-action="Update" asp-controller="Employee" method="post">
+
+                <!-- Employee ID Input -->
+                <div class="mb-3">
+                    <label for="EmployeeID" class="form-label fw-bold">Employee ID</label>
+                    <input asp-for="EmployeeID" type="number" class="form-control" readonly>  <!-- ID field typically displayed as readonly -->
+                </div>
+
+                <!-- Employee Name Input -->
+                <div class="mb-3">
+                    <label for="Name" class="form-label fw-bold">Employee Name</label>
+                    <input asp-for="Name" type="text" class="form-control"> <!-- Employee Name input field -->
+                </div>
+
+                <!-- Email Input -->
+                <div class="mb-3">
+                    <label for="Email" class="form-label fw-bold">Email</label>
+                    <input asp-for="Email" type="email" class="form-control"> <!-- Email input field -->
+                </div>
+
+                <!-- Job Position Input -->
+                <div class="mb-3">
+                    <label for="JobPosition" class="form-label fw-bold">Job Position</label>
+                    <input asp-for="JobPosition" type="text" class="form-control"> <!-- Job Position input field -->
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-dark" style="background-color:#003B46;">Submit</button> <!-- Submit button to save changes -->
+            </form>
+        </div>
+    </div>
+
+</div>

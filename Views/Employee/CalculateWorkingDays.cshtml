@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Working Days Calculator";
+}
+
+<!-- Calculator Section -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-header text-center text-white" style="background: linear-gradient(to right, darkcyan, #005858);">
+                    <h4>Working Days Calculator</h4>
+                </div>
+                <div class="card-body">
+                    <!-- Date Input Form -->
+                    <form asp-action="CalculateWorkingDays" method="post">
+                        <div class="mb-3">
+                            <label for="startDate" class="form-label">Start Date</label>
+                            <input type="date" id="startDate" name="startDate" class="form-control" required />
+                            @if (ViewData.ModelState["startDate"]?.Errors.Count > 0)
+                            {
+                                <div class="text-danger">
+                                    @ViewData.ModelState["startDate"]?.Errors[0]?.ErrorMessage
+                                </div>
+                            }
+                        </div>
+                        <div class="mb-3">
+                            <label for="endDate" class="form-label">End Date</label>
+                            <input type="date" id="endDate" name="endDate" class="form-control" required />
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100" style="background-color: #003B46;">Calculate</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Results Section -->
+<div class="container mt-4">
+    @if (ViewBag.WorkingDays != null)
+    {
+        <div class="alert alert-success text-center p-4" style="border-radius: 10px;">
+            <h5 style="color: #28a745;">Total Working Days: <strong>@ViewBag.WorkingDays</strong></h5>
+            <ul class="list-unstyled pl-3">
+                @foreach (var item in ViewBag.HolidaysAndWeekends)
+                {
+                    <li style="font-size: 16px; color: #555; padding-left: 5px; margin-bottom: 5px;">
+                        <i class="fa fa-calendar-check mr-2" style="color: #28a745;"></i>@item
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+</div>
+
+<!-- Adding some custom CSS for styling -->
+<style>
+    .alert {
+        background: linear-gradient(135deg, rgba(207, 206, 193, 0.3), rgba(76, 156, 119, 0.8));
+        border-left: 5px solid teal;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        color: black;
+    }
+
+        .alert h5 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+    .fa-calendar-check {
+        font-size: 18px;
+    }
+
+    .container {
+        max-width: 800px;
+    }
+</style>
+

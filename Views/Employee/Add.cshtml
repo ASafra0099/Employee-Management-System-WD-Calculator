@@ -1,0 +1,54 @@
+﻿@model EmployeeViewModel
+@{
+    ViewData["Title"] = "Add Employees";
+}
+
+<!-- Main container for the form -->
+<div class="p-4 container">
+    <!-- Header Section -->
+    <div class="row p-4">
+        <div class="col-md-12">
+            <h3>Add New Employee</h3> <!-- Title of the page -->
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="row p-4">
+        <div class="col-md-6">
+            <!-- Form for adding employee details -->
+            <form asp-controller="Employee" asp-action="Add" method="post">
+
+                <!-- Employee ID Input -->
+                <div class="mb-3">
+                    <label for="EmployeeID" class="form-label fw-bold">Employee ID</label>
+                    <input asp-for="EmployeeID" type="number" class="form-control"> <!-- Employee ID input field -->
+                    <span asp-validation-for="EmployeeID" class="text-danger"></span> <!-- Validation message -->
+                </div>
+
+                <!-- Employee Name Input -->
+                <div class="mb-3">
+                    <label for="Name" class="form-label fw-bold">Employee Name</label>
+                    <input asp-for="Name" type="text" class="form-control"> <!-- Employee Name input field -->
+                    <span asp-validation-for="Name" class="text-danger"></span> <!-- Validation message -->
+                </div>
+
+                <!-- Email Input -->
+                <div class="mb-3">
+                    <label for="Email" class="form-label fw-bold">Email</label>
+                    <input asp-for="Email" type="email" class="form-control"> <!-- Email input field -->
+                    <span asp-validation-for="Email" class="text-danger"></span> <!-- Validation message -->
+                </div>
+
+                <!-- Job Position Input -->
+                <div class="mb-3">
+                    <label for="JobPosition" class="form-label fw-bold">Job Position</label>
+                    <input asp-for="JobPosition" type="text" class="form-control"> <!-- Job Position input field -->
+                    <span asp-validation-for="JobPosition" class="text-danger"></span> <!-- Validation message -->
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-dark" style="background-color:#003B46;">Submit</button> <!-- Submit button -->
+            </form>
+        </div>
+    </div>
+</div>

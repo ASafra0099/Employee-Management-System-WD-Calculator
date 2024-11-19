@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Hero Section -->
+<div class="jumbotron text-center text-white py-5" style="background: linear-gradient(to right, #003B46, #00A8A8);">
+    <h1>Welcome Home!!</h1>
+    <p>Streamline your employee management process with ease</p>
+    <a asp-controller="Employee" style="background-color:#00A8A8;" asp-action="Index" class="btn btn-primary btn-dark mt-3">Get Started</a>
+</div>
+
+
+<!-- Features Section -->
+<div class="container mt-5">
+    <div class="row text-center">
+        <!-- Employees Feature Card -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title"><i class="bi bi-person-plus"></i> Employees</h5>
+                    <p class="card-text">Add and manage employee details effortlessly.</p>
+                    <div class="mt-auto">
+                        <!-- Navigate to Create Employee Page -->
+                        <a asp-controller="Employee" asp-action="Add" style="background-color:#003B46;" class="btn btn-dark w-100">Add Employee</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- List All Feature Card -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title"><i class="bi bi-people"></i> List All</h5>
+                    <p class="card-text">View and manage their details quickly.</p>
+                    <div class="mt-auto">
+                        <!-- Navigate to List All Employees Page -->
+                        <a asp-controller="Employee" asp-action="Index" style="background-color:#003B46;" class="btn btn-dark w-100">View Employees</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Weekdays Calculation Feature Card -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title"><i class="bi bi-calendar-check"></i> Working Days Calculator</h5>
+                    <p class="card-text">Calculate working days between two dates.</p>
+                    <div class="mt-auto">
+                        <!-- Navigate to Working Days Calculator Page -->
+                        <a asp-controller="Employee" asp-action="CalculateWorkingDays" style="background-color:#003B46;" class="btn btn-dark w-100">Calculate Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
