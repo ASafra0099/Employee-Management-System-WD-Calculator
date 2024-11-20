@@ -63,9 +63,17 @@ Installation Instructions:
     ```bash
     "ConnectionStrings": {
   "DefaultConnection": "Server=yourserver;Database=EmployeeDB;Trusted_Connection=True;MultipleActiveResultSets=true"}
-- Apply Migrations:
+- Apply Migrations and Update:
     ```bash
     dotnet ef database update
 - Run the Application:
     ```bash
     dotnet run
+
+Screenshots:
+![ss 1](https://github.com/user-attachments/assets/67dffd6e-2c6a-4c91-8e71-10b5b901cd04)
+![ss 2](https://github.com/user-attachments/assets/ac0d6431-6450-4fa3-913c-c04a2b464473)
+![ss 3](https://github.com/user-attachments/assets/1e2182e8-adf1-47f2-a12c-06cce4fcc492)
+![ss 4](https://github.com/user-attachments/assets/ab1a51da-5031-4d71-b7c8-84cfd936797e)
+
+
